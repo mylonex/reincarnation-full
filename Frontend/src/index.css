@@ -1,0 +1,296 @@
+@import "tailwindcss";
+
+/* =========== КАСТОМНЫЕ CSS ПЕРЕМЕННЫЕ =========== */
+:root {
+  /* Темная палитра */
+  --dark-900: #0f0f15;
+  --dark-800: #1a1a25;
+  --dark-700: #252535;
+  --dark-750: #1f1f2f; /* Используется в dashboard и chat */
+  --dark-600: #303045; /* Используется в admin и chat */
+
+  /* Неоновая палитра */
+  --neon-pink: #ff2d75;
+  --neon-purple: #9c4dff;
+  --neon-blue: #4d9eff;
+  --neon-green: #4dff9e;
+  --neon-yellow: #ffd74d;
+}
+
+/* =========== БАЗОВЫЕ СТИЛИ =========== */
+/* Установка основного шрифта */
+body {
+  font-family: 'Rubik', ui-sans-serif, system-ui, sans-serif;
+  /* background-color и color заданы классами Tailwind в body html теге */
+  min-height: 100vh; /* Для flex-col на body */
+  display: flex; /* Для flex-col на body */
+  flex-direction: column; /* Для flex-col на body */
+}
+
+/* Установка пиксельного шрифта */
+.font-pixel {
+  font-family: 'Press Start 2P', ui-monospace, monospace;
+}
+
+/* =========== КАСТОМНЫЕ УТИЛИТЫ И КЛАССЫ =========== */
+
+/* --- Цвета фона --- */
+.bg-dark-900 { background-color: var(--dark-900); }
+.bg-dark-800 { background-color: var(--dark-800); }
+.bg-dark-700 { background-color: var(--dark-700); }
+.bg-dark-750 { background-color: var(--dark-750); }
+.bg-dark-600 { background-color: var(--dark-600); }
+
+/* --- Цвета текста --- */
+.text-dark-900 { color: var(--dark-900); }
+.text-dark-800 { color: var(--dark-800); }
+.text-dark-700 { color: var(--dark-700); }
+.text-dark-750 { color: var(--dark-750); }
+.text-dark-600 { color: var(--dark-600); }
+
+.text-neon-pink { color: var(--neon-pink); }
+.text-neon-purple { color: var(--neon-purple); }
+.text-neon-blue { color: var(--neon-blue); }
+.text-neon-green { color: var(--neon-green); }
+.text-neon-yellow { color: var(--neon-yellow); }
+
+/* --- Цвета границ --- */
+.border-dark-900 { border-color: var(--dark-900); }
+.border-dark-800 { border-color: var(--dark-800); }
+.border-dark-700 { border-color: var(--dark-700); }
+.border-dark-750 { border-color: var(--dark-750); }
+.border-dark-600 { border-color: var(--dark-600); }
+
+.border-neon-pink { border-color: var(--neon-pink); }
+.border-neon-purple { border-color: var(--neon-purple); }
+.border-neon-blue { border-color: var(--neon-blue); }
+.border-neon-green { border-color: var(--neon-green); }
+.border-neon-yellow { border-color: var(--neon-yellow); }
+
+/* --- Цвета фона для границ --- */
+.bg-neon-pink { background-color: var(--neon-pink); }
+.bg-neon-purple { background-color: var(--neon-purple); }
+.bg-neon-blue { background-color: var(--neon-blue); }
+.bg-neon-green { background-color: var(--neon-green); }
+.bg-neon-yellow { background-color: var(--neon-yellow); }
+
+/* --- Градиентные фоны --- */
+.bg-gradient-neon-pink-purple {
+  background: linear-gradient(to right, var(--neon-pink), var(--neon-purple));
+}
+.bg-gradient-neon-purple-blue {
+  background: linear-gradient(to right, var(--neon-purple), var(--neon-blue));
+}
+.bg-gradient-neon-blue-purple {
+  background: linear-gradient(to right, var(--neon-blue), var(--neon-purple));
+}
+.bg-gradient-neon-green-blue {
+  background: linear-gradient(to right, var(--neon-green), var(--neon-blue));
+}
+.bg-gradient-neon-yellow-pink {
+  background: linear-gradient(to right, var(--neon-yellow), var(--neon-pink));
+}
+.bg-gradient-neon-purple-green {
+  background: linear-gradient(to right, var(--neon-purple), var(--neon-green));
+}
+.bg-gradient-neon-pink-blue {
+  background: linear-gradient(to right, var(--neon-pink), var(--neon-blue));
+}
+.bg-gradient-neon-blue-green {
+  background: linear-gradient(to right, var(--neon-blue), var(--neon-green));
+}
+.bg-gradient-neon-purple-pink {
+  background: linear-gradient(to right, var(--neon-purple), var(--neon-pink));
+}
+.bg-gradient-neon-blue-yellow {
+  background: linear-gradient(to right, var(--neon-blue), var(--neon-yellow));
+}
+.bg-gradient-neon-pink-purple-blue {
+  background: linear-gradient(to right, var(--neon-pink), var(--neon-purple), var(--neon-blue));
+}
+.bg-gradient-neon-purple-blue-green {
+  background: linear-gradient(to right, var(--neon-purple), var(--neon-blue), var(--neon-green));
+}
+.bg-gradient-neon-purple-10 {
+  background-color: color-mix(in srgb, var(--neon-purple) 10%, transparent);
+}
+.bg-gradient-neon-green-10 {
+  background-color: color-mix(in srgb, var(--neon-green) 10%, transparent);
+}
+.bg-gradient-neon-blue-10 {
+  background-color: color-mix(in srgb, var(--neon-blue) 10%, transparent);
+}
+.bg-gradient-neon-pink-10 {
+  background-color: color-mix(in srgb, var(--neon-pink) 10%, transparent);
+}
+.bg-gradient-neon-yellow-10 {
+  background-color: color-mix(in srgb, var(--neon-yellow) 10%, transparent);
+}
+.bg-gradient-neon-purple-20 {
+  background-color: color-mix(in srgb, var(--neon-purple) 20%, transparent);
+}
+.bg-gradient-neon-green-20 {
+  background-color: color-mix(in srgb, var(--neon-green) 20%, transparent);
+}
+.bg-gradient-neon-blue-20 {
+  background-color: color-mix(in srgb, var(--neon-blue) 20%, transparent);
+}
+.bg-gradient-neon-pink-20 {
+  background-color: color-mix(in srgb, var(--neon-pink) 20%, transparent);
+}
+.bg-gradient-neon-yellow-20 {
+  background-color: color-mix(in srgb, var(--neon-yellow) 20%, transparent);
+}
+.bg-gradient-neon-green-5 {
+  background-color: color-mix(in srgb, var(--neon-green) 5%, transparent);
+}
+.bg-gradient-neon-blue-5 {
+  background-color: color-mix(in srgb, var(--neon-blue) 5%, transparent);
+}
+.bg-gradient-neon-purple-5 {
+  background-color: color-mix(in srgb, var(--neon-purple) 5%, transparent);
+}
+
+
+/* --- Текстовые градиенты --- */
+/* Примечание: Tailwind JIT может не подхватывать переменные напрямую в bg-clip-text.
+   Поэтому мы определяем их явно. */
+.text-gradient-neon-pink-purple {
+  background: linear-gradient(to right, var(--neon-pink), var(--neon-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.text-gradient-neon-green-blue {
+  background: linear-gradient(to right, var(--neon-green), var(--neon-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.text-gradient-neon-yellow-pink {
+  background: linear-gradient(to right, var(--neon-yellow), var(--neon-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.text-gradient-neon-purple-pink {
+  background: linear-gradient(to right, var(--neon-purple), var(--neon-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* --- Цвета теней --- */
+.shadow-neon-pink { --tw-shadow-color: var(--neon-pink); }
+.shadow-neon-purple { --tw-shadow-color: var(--neon-purple); }
+.shadow-neon-blue { --tw-shadow-color: var(--neon-blue); }
+.shadow-neon-green { --tw-shadow-color: var(--neon-green); }
+.shadow-neon-yellow { --tw-shadow-color: var(--neon-yellow); }
+.shadow-neon-pink\/50 { --tw-shadow-color: color-mix(in srgb, var(--neon-pink) 50%, transparent); }
+.shadow-neon-purple\/30 { --tw-shadow-color: color-mix(in srgb, var(--neon-purple) 30%, transparent); }
+.shadow-neon-blue\/30 { --tw-shadow-color: color-mix(in srgb, var(--neon-blue) 30%, transparent); }
+.shadow-neon-green\/30 { --tw-shadow-color: color-mix(in srgb, var(--neon-green) 30%, transparent); }
+.shadow-neon-pink\/30 { --tw-shadow-color: color-mix(in srgb, var(--neon-pink) 30%, transparent); }
+.shadow-gray-500\/50 { --tw-shadow-color: color-mix(in srgb, #6b7280 50%, transparent); }
+
+
+/* --- Кастомные анимации --- */
+/* Анимация float */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Анимация glow (пример для одного цвета, можно расширить) */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px var(--tw-shadow-color, currentColor), 0 0 20px var(--tw-shadow-color, currentColor);
+  }
+  to {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px var(--tw-shadow-color, currentColor), 0 0 40px var(--tw-shadow-color, currentColor);
+  }
+}
+/* Классы для glow с разными цветами */
+.animate-glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+/* Для использования с glow, установите --tw-shadow-color в нужный neon цвет */
+.hover\:shadow-glow:hover {
+  --tw-shadow: 0 0 8px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+
+/* --- Дополнительные утилиты --- */
+/* Стиль для placeholder внутри темной темы */
+.placeholder-dark-600::placeholder { color: var(--dark-600); }
+.placeholder-dark-700::placeholder { color: var(--dark-700); }
+
+/* --- Кастомные стили для чекбоксов (если нужно больше контроля) --- */
+/* .custom-checkbox:checked {
+  background-color: var(--neon-green);
+  border-color: var(--neon-green);
+} */
+
+
+/* =========== (ОПЦИОНАЛЬНО) Глобальные стили для улучшения совместимости =========== */
+/* Если color-mix не поддерживается, можно использовать rgba или hsla для прозрачности */
+@supports not (color: color-mix(in srgb, red 50%, transparent)) {
+  .bg-neon-purple\/10 { background-color: rgba(156, 77, 255, 0.1); }
+  .bg-neon-green\/10 { background-color: rgba(77, 255, 158, 0.1); }
+  .bg-neon-blue\/10 { background-color: rgba(77, 158, 255, 0.1); }
+  .bg-neon-pink\/10 { background-color: rgba(255, 45, 117, 0.1); }
+  .bg-neon-yellow\/10 { background-color: rgba(255, 215, 77, 0.1); }
+  .bg-neon-purple\/20 { background-color: rgba(156, 77, 255, 0.2); }
+  .bg-neon-green\/20 { background-color: rgba(77, 255, 158, 0.2); }
+  .bg-neon-blue\/20 { background-color: rgba(77, 158, 255, 0.2); }
+  .bg-neon-pink\/20 { background-color: rgba(255, 45, 117, 0.2); }
+  .bg-neon-yellow\/20 { background-color: rgba(255, 215, 77, 0.2); }
+  .bg-neon-green\/5 { background-color: rgba(77, 255, 158, 0.05); }
+  .bg-neon-blue\/5 { background-color: rgba(77, 158, 255, 0.05); }
+  .bg-neon-purple\/5 { background-color: rgba(156, 77, 255, 0.05); }
+  .shadow-neon-pink\/50 { box-shadow: 0 0 8px rgba(255, 45, 117, 0.5); }
+  .shadow-neon-purple\/30 { box-shadow: 0 0 8px rgba(156, 77, 255, 0.3); }
+  .shadow-neon-blue\/30 { box-shadow: 0 0 8px rgba(77, 158, 255, 0.3); }
+  .shadow-neon-green\/30 { box-shadow: 0 0 8px rgba(77, 255, 158, 0.3); }
+  .shadow-neon-pink\/30 { box-shadow: 0 0 8px rgba(255, 45, 117, 0.3); }
+  .shadow-gray-500\/50 { box-shadow: 0 0 8px rgba(107, 114, 128, 0.5); }
+  .hover\:shadow-neon-pink\/50:hover { box-shadow: 0 0 8px rgba(255, 45, 117, 0.5); }
+  .hover\:shadow-neon-purple\/30:hover { box-shadow: 0 0 8px rgba(156, 77, 255, 0.3); }
+  .hover\:shadow-neon-blue\/30:hover { box-shadow: 0 0 8px rgba(77, 158, 255, 0.3); }
+  .hover\:shadow-neon-green\/30:hover { box-shadow: 0 0 8px rgba(77, 255, 158, 0.3); }
+  .hover\:shadow-neon-pink\/30:hover { box-shadow: 0 0 8px rgba(255, 45, 117, 0.3); }
+  .hover\:shadow-gray-500\/50:hover { box-shadow: 0 0 8px rgba(107, 114, 128, 0.5); }
+  .shadow-glow {
+    --tw-shadow: 0 0 8px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+  .hover\:shadow-glow:hover {
+    --tw-shadow: 0 0 8px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+  .shadow-neon-pink { --tw-shadow-color: #ff2d75; }
+  .shadow-neon-purple { --tw-shadow-color: #9c4dff; }
+  .shadow-neon-blue { --tw-shadow-color: #4d9eff; }
+  .shadow-neon-green { --tw-shadow-color: #4dff9e; }
+  .shadow-neon-yellow { --tw-shadow-color: #ffd74d; }
+}
+
+/* Стили для градиентных границ (border-gradient) могут потребовать дополнительных решений или JS */
+/* Пример для градиентной рамки (требует дополнительного div внутри) */
+.border-gradient-neon-purple-30 {
+  position: relative;
+}
+.border-gradient-neon-purple-30::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: -1; /* Помещаем под основным содержимым */
+  margin: -2px; /* Учитываем ширину границы */
+  border-radius: inherit; /* Наследуем скругление углов */
+  background: linear-gradient(to right, var(--neon-purple), var(--neon-blue));
+}
+/* Использование: <div class="relative border-2 border-transparent border-gradient-neon-purple-30">...</div> */

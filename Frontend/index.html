@@ -1,0 +1,67 @@
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reincarnation</title>
+
+  <!-- 1. Подключение Tailwind CSS через CDN (ОБЯЗАТЕЛЬНО) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- 2. Конфигурация Tailwind (после подключения CDN) -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            neon: {
+              pink: '#ff2d75',
+              purple: '#9c4dff',
+              blue: '#4d9eff',
+              green: '#4dff9e',
+              yellow: '#ffd74d'
+            },
+            dark: {
+              900: '#0f0f15',
+              800: '#1a1a25',
+              700: '#252535'
+            }
+          },
+          fontFamily: {
+            sans: ['Rubik', 'sans-serif'],
+            pixel: ['"Press Start 2P"', 'cursive']
+          },
+          animation: {
+            'pulse-slow': 'pulse 3s ease-in-out infinite',
+            'float': 'float 6s ease-in-out infinite',
+            'glow': 'glow 2s ease-in-out infinite alternate'
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+            glow: {
+              'from': { 'text-shadow': '0 0 5px #fff, 0 0 10px #fff, 0 0 15px currentColor, 0 0 20px currentColor' },
+              'to': { 'text-shadow': '0 0 10px #fff, 0 0 20px #fff, 0 0 30px currentColor, 0 0 40px currentColor' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- 3. Подключение внешних шрифтов -->
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  
+  <!-- 4. Подключение Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- 5. Подключение вашего собственного CSS (последним) -->
+  <link rel="stylesheet" href="./src/index.css"/>
+</head>
+  <body class="bg-dark-900 text-gray-100 font-sans">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
